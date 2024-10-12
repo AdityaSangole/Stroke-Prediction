@@ -77,8 +77,8 @@ if page == "Home":
     ever_married = st.selectbox("Have you ever been married?", options=['', 'Yes', 'No'], index=0)  # No default selected
     work_type = st.selectbox("What is your work type?", options=['', 'Private', 'Self-employed', 'Govt_job', 'children', 'Never_worked'], index=0)  # No default selected
     Residence_type = st.selectbox("What is your residence type?", options=['', 'Urban', 'Rural'], index=0)  # No default selected
-    avg_glucose_level = st.number_input("Please enter your average glucose level (mg/dL)", min_value=0.0)  # No default value
-    bmi = st.number_input("Please enter your BMI", min_value=0.0)  # No default value
+    avg_glucose_level = st.number_input("Please enter your average glucose level (mg/dL) (Note: The normal range for average glucose levels is between 70 and 140 mg/dL.)", min_value=0.0)  # No default value
+    bmi = st.number_input("Please enter your BMI (Note: A normal BMI value for a healthy individual is around 23.)", min_value=0.0,max_value=50.0)  # No default value
     smoking_status = st.selectbox("What is your smoking status?", options=['', 'formerly smoked', 'never smoked', 'smokes'], index=0)  # No default selected
 
 
