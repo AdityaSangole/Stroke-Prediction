@@ -1,7 +1,6 @@
 import streamlit as st
 import pandas as pd
 import joblib
-import seaborn as sns
 
 # Load your model, scaler, and encoders
 model = joblib.load('model.pkl')
