@@ -151,6 +151,11 @@ elif page == "Working of Model":
         A higher number of true positives and true negatives indicates better model performance.
 
         
+        """)
+
+    # Display the confusion matrix as a heatmap
+    #sns.heatmap(confusion_matrix, annot=True, fmt='d', cmap='Blues', cbar=False)
+    #st.pyplot()
 
 # About Page
 elif page == "About":
