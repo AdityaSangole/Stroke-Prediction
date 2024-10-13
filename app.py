@@ -70,16 +70,16 @@ if page == "Home":
     # User input for new record
     st.markdown('<p class="section-title">Fill in your details below</p>', unsafe_allow_html=True)
     
-    gender = st.selectbox("What is your gender?", options=['', 'Male', 'Female'], index=0)  # No default selected
+    gender = st.selectbox("What is your gender?", options=['Please Select', 'Male', 'Female'], index=0)  # No default selected
     age = st.number_input("Please enter your age", min_value=0, max_value=120)  # No default value
-    hypertension = st.selectbox("Do you have hypertension?", options=['', 'Yes', 'No'], index=0)  # No default selected
-    heart_disease = st.selectbox("Do you have heart disease?", options=['', 'Yes', 'No'], index=0)  # No default selected
-    ever_married = st.selectbox("Have you ever been married?", options=['', 'Yes', 'No'], index=0)  # No default selected
-    work_type = st.selectbox("What is your work type?", options=['', 'Private', 'Self-employed', 'Govt_job', 'children', 'Never_worked'], index=0)  # No default selected
-    Residence_type = st.selectbox("What is your residence type?", options=['', 'Urban', 'Rural'], index=0)  # No default selected
+    hypertension = st.selectbox("Do you have hypertension?", options=['Please Select', 'Yes', 'No'], index=0)  # No default selected
+    heart_disease = st.selectbox("Do you have heart disease?", options=['Please Select', 'Yes', 'No'], index=0)  # No default selected
+    ever_married = st.selectbox("Have you ever been married?", options=['Please Select', 'Yes', 'No'], index=0)  # No default selected
+    work_type = st.selectbox("What is your work type?", options=['Please Select', 'Private', 'Self-employed', 'Govt_job', 'children', 'Never_worked'], index=0)  # No default selected
+    Residence_type = st.selectbox("What is your residence type?", options=['Please Select', 'Urban', 'Rural'], index=0)  # No default selected
     avg_glucose_level = st.number_input("Please enter your average glucose level (mg/dL) (Note: The normal range for average glucose levels is between 70 and 140 mg/dL.)", min_value=0.0)  # No default value
     bmi = st.number_input("Please enter your BMI (Note: A normal BMI value for a healthy individual is around 23.)", min_value=0.0,max_value=50.0)  # No default value
-    smoking_status = st.selectbox("What is your smoking status?", options=['', 'formerly smoked', 'never smoked', 'smokes'], index=0)  # No default selected
+    smoking_status = st.selectbox("What is your smoking status?", options=['Please Select', 'formerly smoked', 'never smoked', 'smokes'], index=0)  # No default selected
 
 
     # Collecting all inputs into a dictionary and converting Yes/No to 1/0
@@ -100,9 +100,9 @@ if page == "Home":
     # Button to trigger prediction
     if st.button("Predict Stroke", help="Click to predict"):
         # Check for empty fields
-        if (gender == '' or age == 0 or hypertension == '' or heart_disease == '' or 
-            ever_married == '' or work_type == '' or Residence_type == '' or 
-            avg_glucose_level == 0.0 or bmi == 0.0 or smoking_status == ''):
+        if (gender == 'Please Select' or age == 0 or hypertension == 'Please Select' or heart_disease == 'Please Select' or 
+            ever_married == 'Please Select' or work_type == 'Please Select' or Residence_type == 'Please Select' or 
+            avg_glucose_level == 0.0 or bmi == 0.0 or smoking_status == 'Please Select'):
             st.warning("Please enter all the information asked before proceeding.")
         else:
             prediction = pred_new(new_record)
